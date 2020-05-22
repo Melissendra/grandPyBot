@@ -11,6 +11,7 @@ pytest = "*"
 googlemaps = "*"
 wikipedia = "*"
 flake8 = "*"
+unidecode = "*"
 
 [requires]
 python_version = "3.8"
