@@ -107,4 +107,13 @@ STOP_WORDS = [
     "vous", "vous-mêmes","vu","vé","vôtre","vôtres",
     "w","x","y","z","zut","à","â","ça","ès","étaient",
     "étais","était","étant",
-"été","être","ô"]
+    "été","être","ô"]
+
+FUNNY_SENTENCES = [
+    "Je suis un peu sourd, mon petit! Peux-tu répéter ce que tu m'as dit, s'il te plait?",
+    "C'est jeune, qu'est ce qu'ils ont tous à parler si vite et à marmoner. Répètes un peu voir ce que tu viens de dire, s'il te plait!",
+    "Comment? Je dois sûrement changer les piles de mon sonotone, je n'ai pas entendu ce que tu m'as dit!!",
+    "Crévin diou, qu'est-ce que tu dis?"
+]
+
+KEYWORDS = ["trouver", "trouve", "situer", "situe"]
