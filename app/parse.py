@@ -24,7 +24,7 @@ class Parse:
         return new_sentence
 
     def _strip_punctuation_stop_words(self):
-        self.sentence = re.sub(r"[.!,;?\"\']", " ", self.sentence).split()
+        self.sentence = re.sub(r"[\W]", " ", self.sentence).split()
         self.sentence = [n for n in self.sentence if n not in c.STOP_WORDS]
         self.sentence = ' '.join(self.sentence)
         return self.sentence
@@ -37,13 +37,12 @@ class Parse:
             random_nb = random.randint(0,3)
             self.sentence = c.FUNNY_SENTENCES[random_nb]
             return self.sentence
-            
 
     def clean(self):
         self.sentence = self._lowercase()
         self.sentence = self._strip_accents()
         self.sentence = self._strip_punctuation_stop_words()
-        self.sentence = self._empty_input()
+        # self.sentence = self._empty_input()
         return self.sentence
 
 

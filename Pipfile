@@ -12,6 +12,7 @@ googlemaps = "*"
 wikipedia = "*"
 flake8 = "*"
 unidecode = "*"
+envkey = "*"
 
 [requires]
 python_version = "3.8"
