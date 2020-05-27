@@ -1,10 +1,8 @@
-import os
-import envkey
 import googlemaps
-
+import app.constants as c
 
 """Class to get information from googlemaps Api"""
-api_key = os.environ()
+
 
 class GoogleMaps:
     def __init__(self, api_key):
@@ -15,3 +13,10 @@ class GoogleMaps:
         gmaps = googlemaps.Client(key=self.api_key)
         gmap_result = gmaps.geocode(search, region='fr')
 
+        print(gmap_result)
+
+if __name__ == "__main__":
+    google = GoogleMaps(c.API_KEY)
+    gmaps = google.get_address("35b rue du petit pont, Meursac")
+        
+    

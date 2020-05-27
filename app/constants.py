@@ -1,3 +1,5 @@
+API_KEY = "AIzaSyC4Gdy9nz8Bp3ybsm0R8ncsJOGqCFhaj-w"
+
 STOP_WORDS = [
     "a","abord","absolument",
     "afin","ah","ai","aie",

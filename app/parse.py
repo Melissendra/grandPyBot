@@ -42,7 +42,7 @@ class Parse:
         self.sentence = self._lowercase()
         self.sentence = self._strip_accents()
         self.sentence = self._strip_punctuation_stop_words()
-        # self.sentence = self._empty_input()
+        self.sentence = self._empty_input()
         return self.sentence
 
 
