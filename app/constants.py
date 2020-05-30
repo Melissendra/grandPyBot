@@ -117,4 +117,4 @@ FUNNY_SENTENCES = [
     "Crévin diou, qu'est-ce que tu dis?"
 ]
 
-KEYWORDS = ["trouver", "trouve", "situer", "situe"]
+KEYWORDS = ["ou se trouve", "ou se situe", "puis je trouver"]

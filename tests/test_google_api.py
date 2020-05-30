@@ -20,10 +20,11 @@ class TestGoogleMaps:
             return response
 
         city = "Meursac"
-        monkeypatch.setattr(GoogleMaps, 'get_address', mock_get_response)
+        monkeypatch.setattr(GoogleMaps, 'requests.get', mock_get_response)
         google_test = GoogleMaps()
         result = google_test.get_address(city)
-        assert result['formatted_address'] == "Meursac, France"
+        address = result['results'][0]["formatted_address"]
+        assert address == "Meursac, France"
 
             
 
