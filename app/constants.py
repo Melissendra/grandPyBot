@@ -1,5 +1,4 @@
-API_KEY = "AIzaSyC4Gdy9nz8Bp3ybsm0R8ncsJOGqCFhaj-w"
-
+URL = "https://maps.googleapis.com/maps/api/geocode/json"
 STOP_WORDS = [
     "a","abord","absolument",
     "afin","ah","ai","aie",

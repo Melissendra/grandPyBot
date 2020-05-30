@@ -37,6 +37,8 @@ class Parse:
             random_nb = random.randint(0,3)
             self.sentence = c.FUNNY_SENTENCES[random_nb]
             return self.sentence
+        else:
+            return self.sentence
 
     def clean(self):
         self.sentence = self._lowercase()
