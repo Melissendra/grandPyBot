@@ -1,6 +1,8 @@
 from app.google_api import GoogleMaps
 
 """Here we test the response we get from Google Maps api"""
+
+
 class TestGoogleMaps:
 
     def test_get_address(self, monkeypatch):

@@ -3,9 +3,11 @@ import requests
 import app.constants as c
 
 """Class to get information from googlemaps Api"""
+
+
 class GoogleMaps:
     def __init__(self):
-        self.url = c.URL
+        self.url = c.URL_GOOGLE_MAPS
 
     def get_address(self, search):
         """get the result of the user input"""
@@ -26,6 +28,7 @@ class GoogleMaps:
             
         except IndexError:
             return "No result"
+
 
 if __name__ == "__main__":
     google = GoogleMaps()

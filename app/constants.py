@@ -1,4 +1,5 @@
-URL = "https://maps.googleapis.com/maps/api/geocode/json"
+URL_GOOGLE_MAPS = "https://maps.googleapis.com/maps/api/geocode/json"
+URL_WIKI = "https://fr.wikipedia.org/w/api.php"
 STOP_WORDS = [
     "a","abord","absolument",
     "afin","ah","ai","aie",
