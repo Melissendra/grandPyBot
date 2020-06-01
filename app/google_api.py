@@ -16,7 +16,9 @@ class GoogleMaps:
 
         try:
             request = requests.get(self.url, parameters)
-            data = request.json()['results'][0]
+            if request.status_code == 200:
+                data = request.json()['results'][0]
+            
             address = data["formatted_address"]
             latitude = data["geometry"]["location"]["lat"]
             longitude = data["geometry"]["location"]["lng"]
