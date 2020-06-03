@@ -22,7 +22,8 @@ class TestGoogleMaps:
             def __init__(self, url, params=None):
                 self.status_code = 200
 
-            def json(self):
+            @staticmethod
+            def json():
                 return response
 
         monkeypatch.setattr('requests.get', MockGetResponse)
