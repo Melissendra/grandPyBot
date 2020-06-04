@@ -30,6 +30,7 @@ class TestWikipedia:
         page_id = wiki_id_test.get_info_by_gps_coordinates()
         page_id_result = response['query']['geosearch'][0]['pageid']
         assert page_id == page_id_result
+        return page_id_result
         
 
     def test_get_info(self, monkeypatch):
@@ -55,7 +56,7 @@ class TestWikipedia:
 
         monkeypatch.setattr('requests.get', MockGetResponse)
         wiki_test = Wikipedia(45.6460494, -0.7911047999999999)
-        url_result, title_result, extract_result = wiki_test.get_info_by_id(self.test_get_info_by_gps_coordinates)
+        url_result, title_result, extract_result = wiki_test.get_info_by_id()
         result = response["query"]["pages"]['348682']
         title = result["title"]
         url = result["fullurl"]
