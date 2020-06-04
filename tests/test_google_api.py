@@ -10,7 +10,7 @@ class TestGoogleMaps:
             'results': [{
                 'formatted_address': 'Meursac, France',
                 'geometry': {
-                    'location':{
+                    'location': {
                         'lat': 45.6460494,
                         'lng': -0.7911047999999999
                     }
@@ -28,14 +28,14 @@ class TestGoogleMaps:
 
         monkeypatch.setattr('requests.get', MockGetResponse)
         google_test = GoogleMaps()
-        api_result = google_test.get_address("Meursac")
+        api_address, lat, long = google_test.get_address("Meursac")
         result = response["results"][0]
         address = result["formatted_address"]
         latitude = result["geometry"]["location"]["lat"]
         longitude = result["geometry"]["location"]["lng"]
-        assert address == "Meursac, France"
-        assert latitude == 45.6460494
-        assert longitude == -0.7911047999999999
+        assert api_address == address
+        assert lat == latitude
+        assert long == longitude
 
 
             
