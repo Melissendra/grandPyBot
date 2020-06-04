@@ -6,7 +6,7 @@ import app.constants as c
 
 
 class Wikipedia:
-    def __init__(self, latitude=None, longitude=None):
+    def __init__(self, latitude, longitude):
         self.latitude = latitude
         self.longitude = longitude
         self.url = c.URL_WIKI
@@ -24,6 +24,7 @@ class Wikipedia:
         if results.status_code == 200:
             data = results.json()["query"]["geosearch"][0]["pageid"]
             return data
+
 
         else:
             data = {
