@@ -30,7 +30,7 @@ class TestWikipedia:
         page_id = wiki_id_test.get_info_by_gps_coordinates()
         page_id_result = response['query']['geosearch'][0]['pageid']
         assert page_id == page_id_result
-        return page_id_result
+    
         
 
     def test_get_info(self, monkeypatch):
