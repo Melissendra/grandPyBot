@@ -32,7 +32,7 @@ class Wikipedia:
                     'geosearch': []
                 }
             }
-            return "no value"
+            return 0
 
     def get_info_by_id(self):
         page_id = self.get_info_by_gps_coordinates()

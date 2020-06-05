@@ -33,17 +33,17 @@ class TestWikipedia:
     
         
 
-    def test_get_info(self, monkeypatch):
+    def test_get_info_by_id(self, monkeypatch):
         response = {
-            'query': [{
+            'query': {
                 'pages': {
                     '348682': {
                         'title': 'Meursac',
-                        'extract': "Meursac (prononcé [mœʁ.sak]) est une commune du Sud-Ouest de la France située dans le département de la Charente-Maritime (région Nouvelle-Aquitaine). Ses habitants sont appelés les Meursacais et les Meursacaises.\nCommune à dominante rurale, au cœur d'une région céréalière et viticole et à proximité des stations balnéaires de la côte de Beauté, Meursac est une commune appartenant à la région naturelle du Royannais. Elle se rattache au bassin de vie de Saujon et à la sphère d'influence urbaine de Royan. Sa relative proximité avec cette ville, important centre économique du département, explique la croissance constante de sa population et le développement du phénomène de périurbanisation, qui fait que de nombreux citadins, à la recherche d'une plus grande qualité de vie, partent s'installer dans les communes de la grande périphérie.\nLa commune se compose de deux centres principaux : Saint-Martin, qui correspond au centre-bourg, concentre la plus grande partie des commerces de proximité, les écoles et l'église Saint-Martin. Édifice majeur du village, il est une synthèse des styles roman saintongeais et gothique rayonnant (XIIe\u2009–\u2009XVe siècles). Les Épeaux, principal écart de la commune,…",
+                        'extract': "résumé Meursac",
                         'fullurl': 'https://fr.wikipedia.org/wiki/Meursac'
                     }
                 }
-            }]
+            }
         }
         """Mock of the requests.get method"""
         class MockGetResponse:
@@ -53,15 +53,21 @@ class TestWikipedia:
             @staticmethod
             def json():
                 return response
+            
+        def mock_get_info_by_coordinates(self):
+            return 348682
+        
+
 
         monkeypatch.setattr('requests.get', MockGetResponse)
+        monkeypatch.setattr('app.wiki_api.Wikipedia.get_info_by_gps_coordinates', mock_get_info_by_coordinates)
         wiki_test = Wikipedia(45.6460494, -0.7911047999999999)
-        url_result, title_result, extract_result = wiki_test.get_info_by_id()
+        title_result, extract_result, url_result= wiki_test.get_info_by_id()
         result = response["query"]["pages"]['348682']
         title = result["title"]
         url = result["fullurl"]
         extract = result["extract"]
         
-        assert title_result == title_result
-        assert url_result == url_result
+        assert title_result == title
+        assert url_result == url
         assert extract_result == extract
