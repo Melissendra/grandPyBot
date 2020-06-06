@@ -1,6 +1,7 @@
 import unicodedata
 import re
 import random
+import json
 import app.constants as c
 
 """ Class to normalize the user's sentences"""
@@ -26,19 +27,23 @@ class Parser:
     def _keywords(self):
         pass
 
+    def _clean_stop_words(self):
+        clean_stop_words = set()
+        with open('app.stop_words.json') as f:
+            data = json.load(f)
+
+            for word in data:
+                clean_word = word.self._lowercase()._strip_accents()
+                clean_stop_words.add(clean_word)
+            
+        return clean_stop_words
+
     def _strip_punctuation_stop_words(self):
+        stop_words = self._clean_stop_words()
         self.sentence = re.sub(r"[\W]", " ", self.sentence).split()
-        self.sentence = [n for n in self.sentence if n not in c.STOP_WORDS]
+        self.sentence = [n for n in self.sentence if n not in stop_words]
         self.sentence = ' '.join(self.sentence)
         return self.sentence
-
-    def _empty_input(self):
-        if self.sentence == "":
-            random_nb = random.randint(0,3)
-            self.sentence = c.FUNNY_SENTENCES[random_nb]
-            return self.sentence
-        else:
-            return self.sentence
 
     def clean(self):
         self.sentence = self._lowercase()
@@ -48,6 +53,6 @@ class Parser:
 
 
 if __name__ == "__main__":
-    sentence = Parse("")
+    sentence = Parser("")
     new_sentence = sentence.clean()
     print(new_sentence)
