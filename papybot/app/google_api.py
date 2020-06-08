@@ -1,6 +1,6 @@
 import os
 import requests
-import app.constants as c
+import papybot.app.constants as c
 
 """Class to get information from googlemaps Api"""
 

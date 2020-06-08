@@ -1,6 +1,6 @@
 from papybot.app.google_api import GoogleMaps
-from papybot.app import Wikipedia
-from papybot.app import Parser
+from papybot.app.wiki_api import Wikipedia
+from papybot.app.parser import Parser
 
 
 def answers(question):

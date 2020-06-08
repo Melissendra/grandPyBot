@@ -1,4 +1,4 @@
-from papybot.app import Wikipedia
+from papybot.app.wiki_api import Wikipedia
 
 """Here we test the response we get from Wikipedia api"""
 

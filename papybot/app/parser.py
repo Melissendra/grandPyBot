@@ -1,6 +1,8 @@
 import unicodedata
 import re
-from papybot import app as csw, app as c
+import papybot.app.constants as c
+import papybot.app.clean_stop_words as csw
+
 
 """ Class to normalize the user's sentences"""
 

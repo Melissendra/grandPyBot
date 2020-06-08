@@ -1,4 +1,4 @@
-from papybot.app import Parser
+from papybot.app.parser import Parser
 
 """class that is going to test the class Parse and see to potential errors"""
 
