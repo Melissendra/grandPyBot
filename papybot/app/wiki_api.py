@@ -1,6 +1,5 @@
 import requests
-import app.constants as c
-
+from papybot import app as c
 
 """Here we'll use Mediawiki to get informations about the address's results"""
 

@@ -1,4 +1,4 @@
-from app.google_api import GoogleMaps
+from papybot.app.google_api import GoogleMaps
 
 """Here we test the response we get from Google Maps api"""
 

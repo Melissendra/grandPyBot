@@ -1,0 +1,1 @@
+from papybot import app
