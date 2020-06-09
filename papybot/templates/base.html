@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% if title %}
+        <title>{{title}}GrandPy Bot</title>
+        {% else %}
+        <title>Welcome to GrandPy Bot Site</title>
+        {% endif %}
+        <link rel="icon" type="image/png" href="https://pixy.org/src/454/4549807.png">
+        <link rel="stylesheet" href="static/normalize.css">
+    </head>
+    <body>
+        <div class="Header">
+            <h1>Welcome to GrandPy Bot!! Ask any locations you might want to find and GranPy will help you!!</h1>
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>
