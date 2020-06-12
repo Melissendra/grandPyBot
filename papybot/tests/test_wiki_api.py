@@ -56,7 +56,7 @@ class TestWikipedia:
             return 348682
 
         monkeypatch.setattr('requests.get', MockGetResponse)
-        monkeypatch.setattr('app.wiki_api.Wikipedia.get_info_by_gps_coordinates', mock_get_info_by_coordinates)
+        monkeypatch.setattr('papybot.app.wiki_api.Wikipedia.get_info_by_gps_coordinates', mock_get_info_by_coordinates)
         wiki_test = Wikipedia(45.6460494, -0.7911047999999999)
         title_result, extract_result, url_result = wiki_test.get_info_by_id()
         result = response["query"]["pages"]['348682']

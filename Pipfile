@@ -12,10 +12,10 @@ googlemaps = "*"
 wikipedia = "*"
 flake8 = "*"
 unidecode = "*"
-envkey = "*"
 requests = "*"
 python-dotenv = "*"
 flask-wtf = "*"
+flask-fontawesome = "*"
 
 [requires]
 python_version = "3.8"

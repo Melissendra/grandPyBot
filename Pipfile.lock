@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8142a26b44a1e5a28131ca32383544468ad877d6437dca71d26be9b17458e73e"
+            "sha256": "7f8882f4976abe1eebbb89051983a0c797b16fbfc31d8f937c817b7617a15a8f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -52,13 +52,6 @@
             ],
             "version": "==7.1.2"
         },
-        "envkey": {
-            "hashes": [
-                "sha256:7a2981e9cd2500ab041ee361d792063ffe53791caddb8206d2dec92019905b1c"
-            ],
-            "index": "pypi",
-            "version": "==1.2.5"
-        },
         "flake8": {
             "hashes": [
                 "sha256:15e351d19611c887e482fb960eae4d44845013cc142d42896e9862f775d8cf5c",
@@ -74,6 +67,14 @@
             ],
             "index": "pypi",
             "version": "==1.1.2"
+        },
+        "flask-fontawesome": {
+            "hashes": [
+                "sha256:0614cf9032bb9a763e5c6151a56ca4efb2a8187bb701f6bae1768ad86abf1f1c",
+                "sha256:d4e678fd1990874683448069dc3ab212dd2565fcff274b874f8b5012d276ef44"
+            ],
+            "index": "pypi",
+            "version": "==0.1.4"
         },
         "flask-wtf": {
             "hashes": [
