@@ -14,7 +14,7 @@ class Parser:
     def __init__(self, sentence):
         self.sentence = sentence
 
-    """method to put all the sentence in lower case"""
+    # method to put all the sentence in lower case
 
     def _lowercase(self):
         new_sentence = self.sentence.lower()

@@ -7,8 +7,10 @@ body{
 }
 
 #bot{
+    display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
     width: 80%;
     height:80%;
     background: #ec823a;
@@ -16,9 +18,10 @@ body{
 
 /* header design */
 .grandPyIcon{
-    width: 150px;
-    height: 200px;
+    width: 30px;
+    height: 60px;
 }
+
 .header h1{
-    color: blue;
+    color: black;
 }

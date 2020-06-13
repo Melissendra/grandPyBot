@@ -6,8 +6,7 @@ from papybot.app.parser import Parser
 def answers(question):
     clean_question = Parser(question).clean()
     gmaps = GoogleMaps().get_address(clean_question)
-    latitude = gmaps[1]
-    longitude = gmaps[2]
+    address, latitude, longitude = gmaps
     media_wiki_coord = Wikipedia(latitude, longitude)
     wiki_info = media_wiki_coord.get_info_by_id()
 
