@@ -15,7 +15,6 @@ unidecode = "*"
 requests = "*"
 python-dotenv = "*"
 flask-wtf = "*"
-flask-fontawesome = "*"
 
 [requires]
 python_version = "3.8"

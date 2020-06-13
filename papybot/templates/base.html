@@ -8,25 +8,26 @@
         {% else %}
         <title>Welcome to GrandPy Bot Site</title>
         {% endif %}
+        <script src="https://kit.fontawesome.com/d9c3aa8dec.js" crossorigin="anonymous"></script>
         <link rel="icon" type="image/png" href="https://pixy.org/src/454/4549807.png">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/normalize.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
     </head>
     <body>
-        <header>
-            <div class="Header">
-                <img class="GrandPyIcon" src="https://pixy.org/src/454/4549807.png" alt="grandfather drawing">
-                <h1>Bienvenue sur le site de GrandPy Bot! Vous chercher une localisation? Vous êtes au bon endroit! Posez vos questions à GrandPy. </h1>
-            </div>
-        </header>
-        {% block content %}{% endblock %}
-        <footer>
-            <div class="name">Gaëlle Lefeuvre</div>
-            <div class="gitLink">
-                <a href="https://github.com/Melissendra/grandPyBot"></a>
-                <a href="https://www.linkedin.com/in/gaellelefeuvre/"></a>
-            </div>
-        </footer>
-        <script src="https://use.fontawesome.com/4c3ee20bf1.js"></script>
+        <section id="bot">
+            <header>
+                <div class="header">
+                    <img class="grandPyIcon" src="https://pixy.org/src/454/4549807.png" alt="grandfather drawing">
+                    <h1>Bienvenue sur le site de GrandPy Bot! Vous cherchez une localisation? Vous êtes au bon endroit! Posez vos questions à GrandPy. </h1>
+                </div>
+            </header>{% block content %}{% endblock %}
+            <footer>
+                <div class="name">Gaëlle Lefeuvre</div>
+                <div class="gitLink">
+                    <a href="https://github.com/Melissendra/grandPyBot"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/gaellelefeuvre/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </footer>
+        </section>
     </body>
 </html>
