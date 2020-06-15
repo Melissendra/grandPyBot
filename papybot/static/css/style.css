@@ -1,27 +1,47 @@
 /*body design */
-body{
+body, html{
     display: flex;
-    background: #f9c49a;
+    background: linear-gradient(to left top, #ffe900, #eb94f7);
     width: 100%;
+    height: 100%;
     margin: 0;
 }
 
-#bot{
-    display: flex;
+header{
+    background: #f8904bd5;
     justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 80%;
-    height:80%;
-    background: #ec823a;
+    width: 100%;
+    height: 100px;
+}
+
+
+#bot{
+    border-radius: 20px;
+    background: #e09a6bd5;
+    display: flex;
+    flex-direction: column;
+    margin: 8% auto;
+    width: 900px;
+    height:600px;
+}
+
+#container{
+
 }
 
 /* header design */
 .grandPyIcon{
-    width: 30px;
+    width: 40px;
     height: 60px;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .header h1{
     color: black;
+    font-size: 1.5rem;
 }
