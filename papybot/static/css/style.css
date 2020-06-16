@@ -1,6 +1,5 @@
 /*body design */
 body, html{
-    display: flex;
     background: linear-gradient(to left top, #ffe900, #eb94f7);
     width: 100%;
     height: 100%;
@@ -8,40 +7,49 @@ body, html{
 }
 
 header{
-    background: #f8904bd5;
-    justify-content: center;
-    width: 100%;
-    height: 100px;
+    grid-area: header;
 }
 
-
 #bot{
-    border-radius: 20px;
-    background: #e09a6bd5;
-    display: flex;
-    flex-direction: column;
-    margin: 8% auto;
-    width: 900px;
-    height:600px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:150px 600px 50px;
+    row-gap: 50px;
+    grid-template-areas: 
+        "header header header header"
+        ". main main ."
+        "footer footer footer footer";   
 }
 
 #container{
-
-}
-
-/* header design */
-.grandPyIcon{
-    width: 40px;
-    height: 60px;
+    grid-area: main;
+    border: 1px solid #AE7644;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px #AE7644;
+    background-color: #D5A275;
+    opacity: 0.5;
 }
 
 .header{
-    display: flex;
-    width: 100%;
-    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.grandPyIcon{
+    height: 150px;
+    width: 100px;
+    grid-column: 1 / span 1;
+    grid-row: 1 /span 1;
+    justify-self: center;
+    align-self: center;
 }
 
 .header h1{
-    color: black;
-    font-size: 1.5rem;
+    grid-column: 2 / span 3;
+    align-self: center;
 }
+
+footer{
+    grid-area: footer;
+}
+
+
