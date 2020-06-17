@@ -1,6 +1,6 @@
 /*body design */
 body, html{
-    background: linear-gradient(to left top, #ffe900, #eb94f7);
+    background: linear-gradient(to left top, #00e1fd, #fc007a);
     width: 100%;
     height: 100%;
     margin: 0;
@@ -16,24 +16,26 @@ header{
     grid-template-rows:150px 600px 50px;
     row-gap: 50px;
     grid-template-areas: 
-        "header header header header"
+        "header header header ."
         ". main main ."
         "footer footer footer footer";   
 }
 
 #container{
     grid-area: main;
-    border: 1px solid #AE7644;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e8458b;
     border-radius: 20px;
-    box-shadow: 10px 5px 5px #AE7644;
-    background-color: #D5A275;
-    opacity: 0.5;
+    box-shadow: 10px 5px 10px #e8458b;
+    background: #f7f4f4;
+    opacity: 0.9;
 }
 
 .header{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
 }
+
 .grandPyIcon{
     height: 150px;
     width: 100px;
@@ -45,8 +47,25 @@ header{
 
 .header h1{
     grid-column: 2 / span 3;
+    display: flex;
+    margin-left: 32%;
     align-self: center;
+    font-size: 2.2rem;
+    text-align: right;
 }
+
+.papySentence{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 50px;
+    background: white;
+    right: 50px;
+    text-align: center;
+    width: 200px;
+    height: 80px;
+    border: 2px solid #555555;
+}
+
 
 footer{
     grid-area: footer;
