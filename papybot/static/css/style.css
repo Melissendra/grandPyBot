@@ -1,6 +1,6 @@
 /*body design */
 body, html{
-    background: #bbbfca;
+    background: #F2D888;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -20,26 +20,25 @@ body, html{
 /* header section design */
 header{
     grid-area: header;
-    color: #151924;
+    color: #8C7446;
 }
 
 .header{
-    display: grid;
+    display: flex;
+    justify-content: center;
+    height: 100%;
 }
 
 .grandPyIcon{
-    height: 120px;
-    width: 80px;
-    grid-column: 1 / span 1;
-    grid-row: 1 /span 1;
-    justify-self: center;
+    height: 100px;
+    width: 70px;
+    justify-content: start;
+    margin-right: 50px;
     align-self: center;
 }
 
 .header h1{
-    grid-column: 2 / span 3;
-    display: flex;
-    margin-left: 17%;
+    margin-left: 50px;
     align-self: center;
     font-size: 2.2rem;
     text-align: right;
@@ -59,34 +58,38 @@ p:last-of-type{
 }
 
 #container{
+    background: #0D0D0D;
     grid-area: main;
     display: flex;
     flex-direction: column;
     align-content: space-between;
     border: 1px solid transparent;
     border-radius: 20px;
-    box-shadow: 10px 5px 10px #382a55;
-    background: #151924;
-    opacity: 0.9;
+    box-shadow: 10px 5px 10px #8c7446;
+    opacity: 0.8;
 }
 
+.sentences{
+    width: 100%;
+    height: 80%;
+}
 
 .papySentence{
-    background: linear-gradient(to left top, #cfcbd2, #cb98ed, #8b63da, #3c21b7);
+    background: linear-gradient(to left top, #f2f2f2, #F2D888, #bf9d5e, #8c7446);
     border: 1px solid transparent;
     border-radius: 10px;
-    box-shadow: 4px 4px 0 rgba(248, 159, 197, 0.2);
+    box-shadow: 4px 4px 0 rgba(140, 116, 70, 0.2);
     font-size: 1.2rem;
     line-height: 1.3;
-    margin: 30px 40px 37%;
-    max-width: 400px;
+    margin: 30px 40px;
+    max-width: 35%;
     padding: 15px;
     position: relative;
 }
 
 .arrow{
     border-left: 21px solid transparent;
-    border-top: 20px solid rgba(221, 68, 134, 0.2);
+    border-top: 20px solid rgba(140, 116, 70, 0.2);
     bottom: -25px;
     position: absolute;
     right: 15px;
@@ -94,7 +97,7 @@ p:last-of-type{
 
 .arrow::before{
     border-left: 23px solid transparent;
-    border-top: 23px solid #cfcbd2;
+    border-top: 23px solid #f8eed1;
     bottom: 2px;
     content: "";
     position: absolute;
@@ -104,34 +107,73 @@ p:last-of-type{
 .botQuestion{
     height: 20%;
     display: flex;
-    justify-content: space-between;
 }
 
 /* search bar design */
 
 #grandPybot{
-    width: 90%;
-    height: 100%;
+    width: 85%;
+    height: 70%;
     display: flex;
-    justify-content: center;
+    align-self: center;
+    background-color:rgba(140, 116, 70, 0.2);
+    color: #BF9D5E;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin-right: 30px;
 }
 
 .search{
     display: flex;
-    justify-content: center;
     height: 100%;
     width: 100%;
 }
 
+.grandPyBot{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    margin: auto 30px;
+}
 
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 12%;
+    height: 70%;
+    background-color: #bf9d5e;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 rgba(122, 102, 65, 0.2) ;
+}
 
+/* footer design */
 footer{
     grid-area: footer;
 }
 
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.name{
+    font-weight: 900;
+    margin-right: 30px;
+    color:#8c7446;
+}
+
 i{
-    color: #000000;
-    font-size: 2rem;
+    display: flex;
+    align-self: center;
+    margin-right: 15px;
+    color: #8c7446;
+    font-size: 1.8rem;
 }
 
 

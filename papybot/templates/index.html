@@ -2,14 +2,16 @@
 
 {% block content %}
 <div id="container">
-    <div class="papySentence">
-        <p classe="name"><strong>Grand Py</strong></p>
-        <p class="sentence">Que puis-je faire pour toi?</p>
-        <div class="arrow"></div>
+    <div class="sentences">
+        <div class="papySentence">
+            <p><strong>Grand Py</strong></p>
+            <p class="sentence">Que puis-je faire pour toi?</p>
+            <div class="arrow"></div>
+        </div>
     </div>
     <div class="botQuestion">
         <form class="search" action="" method="get">
-            <label for="grandpyBot" id="grandPybot">
+            <label for="grandpyBot" name="grandPyBot" class="grandPyBot">
                 <input type="text" id="grandPybot" placeholder="Recherche">
                 <button type="submit" class="btn">Entrer</button>
             </label>
