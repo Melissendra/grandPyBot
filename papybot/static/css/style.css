@@ -78,7 +78,7 @@ p:last-of-type{
     box-shadow: 4px 4px 0 rgba(248, 159, 197, 0.2);
     font-size: 1.2rem;
     line-height: 1.3;
-    margin: 30px 40px 400px;
+    margin: 30px 40px 37%;
     max-width: 400px;
     padding: 15px;
     position: relative;
@@ -106,6 +106,24 @@ p:last-of-type{
     display: flex;
     justify-content: space-between;
 }
+
+/* search bar design */
+
+#grandPybot{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+
 
 footer{
     grid-area: footer;
