@@ -1,16 +1,9 @@
-const { constants } = require("buffer");
-
-let form = document.querySelector(".search")
-const input= document.querySelector("#grandPyBot")
-let inputValue = input.value;
+let form = document.querySelector(".search");
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
-    // send a form
-    // fetch("/ajax", {
-    //     method: "POST",
-    //     body: new FormData(form)
-    // });
-    let answer = NewDiv(form);
-    answer.newDiv()
+    console.log("je marche");
+    const input = document.getElementById("grandPyBot");
+    let inputVal = input.value;
+    console.log(inputVal);
 });
