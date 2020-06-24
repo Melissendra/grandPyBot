@@ -1,11 +1,18 @@
 let form = document.querySelector(".search");
 
+async function getFormData(url){
+    let response = await fetch(url);
+    data = await response.json()
+    return data;
+}
+
+getFormData("/ajax")
+    .then(data => data.response);
+
 form.addEventListener("submit", function(event){
     event.preventDefault();
     const input = document.querySelector("#grandPybot");
     let inputVal = input.value;
-    const firstSentence = document.querySelector(".sentence");
-    const newDiv = new CreateElement("div", {"class": "userSentence"}, firstSentence).newElement();
-    const newUser = new CreateElement("p", {"class": "sentence"}, newDiv, "User").newElement();
-    const newQuestion = new CreateElement("p", {"class": "sentence"}, newUser, inputVal).newElement();
+    const answer = new NewDiv(inputVal);
+    answer.userDiv();
 });
