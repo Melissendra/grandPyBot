@@ -1,15 +1,15 @@
-from flask import render_template, jsonify,request
+import os
+from flask import render_template, jsonify, request
 from papybot import app
+from papybot.backend.answer import answers
 
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/')
 def index():
-    user = {"username": "Gaelle"}
-    return render_template('index.html', title='Grandpy bot', user=user)
+    return render_template('index.html', title='Grandpy bot', google_key=os.getenv("GOOGLE_API_FRONT"))
 
-# @app.route("/ajax", methods=["POST"])
-# def ajax():
-#     user_text= request.form["grandPyBot"]
-#     response = Parser(user_text).clean()
-#     print(response)
-#     return jsonify(response)
+@app.route("/ajax", methods=["POST"])
+def ajax():
+    user_text= request.data.decode()
+    response = answers(user_text)
+    return jsonify(response)

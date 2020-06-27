@@ -4,7 +4,7 @@ import unicodedata
 
 def clean_stop_words():
     clean_stop_words = set()
-    with open('papybot/app/stop_words.json') as f:
+    with open('papybot/backend/stop_words.json') as f:
         data = json.load(f)
 
         for word in data:
