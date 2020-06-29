@@ -30,5 +30,5 @@ NO_HISTORY_MSG = [
 KEYWORDS = [
     "trouve", "situe", "puis", "trouver", "trouve", 
     "adresse", "emplacement", "localite", "lieu", 
-    "endroit","place", "papy"
+    "endroit","place", "papy", "grandpy", "grand", "py"
     ]
