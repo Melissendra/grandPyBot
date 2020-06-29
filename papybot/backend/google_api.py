@@ -25,6 +25,7 @@ class GoogleMaps:
             latitude = data["geometry"]["location"]["lat"]
             longitude = data["geometry"]["location"]["lng"]
             return address, latitude, longitude
+
             
         except IndexError:
             return "No result"

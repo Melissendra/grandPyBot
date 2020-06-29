@@ -8,15 +8,14 @@ def answers(question):
     if question != "":
         clean_question = Parser(question).clean()
         gmaps = GoogleMaps().get_address(clean_question)
-        address, latitude, longitude = gmaps
         if gmaps != "no result":
+            address, latitude, longitude = gmaps
             media_wiki_coord = Wikipedia(latitude, longitude)
             wiki_info = media_wiki_coord.get_info_by_id()
             if wiki_info != "no result":
                 title = wiki_info[0]
                 wiki_article = wiki_info[1]
                 url = wiki_info[2]
-
                 return {
                     "address": address,
                     "latitude": float(latitude),
@@ -42,6 +41,6 @@ def answers(question):
         }
 
 if __name__ == "__main__":
-    answer = answers("")
+    answer = answers("sdg")
     print(answer)
     

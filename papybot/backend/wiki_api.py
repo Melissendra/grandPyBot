@@ -52,6 +52,7 @@ class Wikipedia:
             title_page = data["title"]
             extract_page = data["extract"]
             return title_page, extract_page, url_page
+            
 
 
 if __name__ == '__main__':

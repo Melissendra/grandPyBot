@@ -53,9 +53,12 @@ form.addEventListener("submit", function(event){
         "Content-Type": "plain/text"
     })
     .then(response =>{
-        console.log(response.wiki_article)
-        papyAnswer(response.wiki_article, response.url);
-        console.log(response.longitude, response.latitude)
-        mapGet(response.longitude, response.latitude);
+        if(inputVal != ""){
+            papyAnswer(response.wiki_article, response.url);
+            mapGet(response.longitude, response.latitude);
+        }
+        else{
+            papyAnswer(response.empty_message)
+        }
     })
 });
