@@ -49,6 +49,7 @@ function mapGet(lng, lat, title){
     newMapDiv.scrollIntoView({behavior:"smooth"});
 }
 
+
 form.addEventListener("submit", function(event){
     event.preventDefault();
     let inputVal = input.value;
@@ -57,17 +58,16 @@ form.addEventListener("submit", function(event){
     })
     .then(response =>{
         if(inputVal != ""){
-            if(response.ok){
+            if (response.latitude != undefined){
                 newQuestion();
+                console.log(response.latitude);
                 papyAnswer(response.wiki_article, response.url);
                 mapGet(response.longitude, response.latitude, response.title);
-                input.value = "";
-            }
-            else {
+                input.value = "";  
+            }else{
                 newQuestion();
                 papyAnswer(response.failed_message);
-                input.value = "";
-            }    
+            }
         }
         else{
             papyAnswer(response.empty_message);
