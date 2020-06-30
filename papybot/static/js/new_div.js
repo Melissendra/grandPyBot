@@ -4,7 +4,8 @@ originalDiv = document.querySelector(".sentences")
     
 function userDiv(sentence){
     const textValue = sentence;
-    const newDiv = createElement("div", {"class": "userSentence"}, originalDiv);
+    const newSentenceDiv = createElement("div", {"class": "userSentences"}, originalDiv);
+    const newDiv = createElement("div", {"class": "userSentence"}, newSentenceDiv);
     const newUser = createElement("p", {"class": "sentence"}, newDiv);
     const newUserStrong = createElement("strong", {"class": ""}, newUser, "User");
     const newQuestion =  createElement("p", {"class": "sentence"}, newUser, textValue);
