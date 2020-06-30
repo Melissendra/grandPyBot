@@ -19,14 +19,17 @@ function getFormData(url, data, headers){
 function newQuestion(){
     let inputVal = input.value;
     const question = userDiv(inputVal);
-
+    question.scrollIntoView({behavior: "smooth"});
+    return question
 }
 
 function papyAnswer(data, url){
     const papyAnswer = papyDiv(data, url);
+    papyAnswer.scrollIntoView({behavior: "smooth"});
+    return papyAnswer;
 }
 
-function mapGet(lng, lat){
+function mapGet(lng, lat, title){
     const newMapDiv = mapDiv();
     const latLong = {
         lat : lat,
@@ -41,24 +44,27 @@ function mapGet(lng, lat){
     const marker = new google.maps.Marker({
         position: latLong,
         map: map,
-        title: ""
+        title: title
     });
+    newMapDiv.scrollIntoView({behavior:"smooth"});
 }
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
     let inputVal = input.value;
-    newQuestion();
     getFormData("/ajax", inputVal, {
         "Content-Type": "plain/text"
     })
     .then(response =>{
         if(inputVal != ""){
+            newQuestion();
             papyAnswer(response.wiki_article, response.url);
-            mapGet(response.longitude, response.latitude);
+            mapGet(response.longitude, response.latitude, response.title);
+            input.value = "";
         }
         else{
-            papyAnswer(response.empty_message)
+            papyAnswer(response.empty_message);
+            input.value = "";
         }
-    })
+    });
 });
