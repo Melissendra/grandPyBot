@@ -28,7 +28,7 @@ class GoogleMaps:
 
             
         except IndexError:
-            return "No result"
+            return "no result"
 
 
 if __name__ == "__main__":

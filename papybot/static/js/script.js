@@ -57,10 +57,17 @@ form.addEventListener("submit", function(event){
     })
     .then(response =>{
         if(inputVal != ""){
-            newQuestion();
-            papyAnswer(response.wiki_article, response.url);
-            mapGet(response.longitude, response.latitude, response.title);
-            input.value = "";
+            if(response.ok){
+                newQuestion();
+                papyAnswer(response.wiki_article, response.url);
+                mapGet(response.longitude, response.latitude, response.title);
+                input.value = "";
+            }
+            else {
+                newQuestion();
+                papyAnswer(response.failed_message);
+                input.value = "";
+            }    
         }
         else{
             papyAnswer(response.empty_message);

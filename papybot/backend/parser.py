@@ -37,8 +37,3 @@ class Parser:
         self.sentence = self._strip_punctuation_stop_words_keywords()
         return self.sentence
 
-
-if __name__ == "__main__":
-    sentence = Parser("")
-    new_sentence = sentence.clean()
-    print(new_sentence)
