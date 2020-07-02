@@ -33,5 +33,5 @@ class GoogleMaps:
 
 if __name__ == "__main__":
     google = GoogleMaps()
-    request = google.get_address("35b rue du petit pont, Meursac")
+    request = google.get_address("bonj")
     print(request)

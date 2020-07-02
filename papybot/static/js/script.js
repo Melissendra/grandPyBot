@@ -59,7 +59,7 @@ function showMessages(){
     })
     .then(response =>{
         if(inputVal != ""){
-            if ((response.latitude != undefined) && (response.longitude != undefined)){
+            if (response.latitude != undefined){
                 newQuestion();
                 console.log(response.latitude);
                 papyAnswer(response.wiki_article, response.url);

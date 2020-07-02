@@ -262,6 +262,24 @@ i{
     }
 }
 
+@media(max-width:1015px){
+    #bot{
+        row-gap: 40px;
+    }
+
+    .papySentence, #map{
+        max-width: 450px;
+    }
+
+    .url{
+        font-size: 0.8rem;
+    }
+
+    .btn{
+        width: 20%;
+    }
+}
+
 @media(max-width:768px){
     #bot{
         grid-template-rows: 150px 700px 60px;
@@ -465,23 +483,6 @@ i{
     }
 }
 
-@media(max-width:1015px){
-    #bot{
-        row-gap: 40px;
-    }
-
-    .papySentence, #map{
-        max-width: 450px;
-    }
-
-    .url{
-        font-size: 0.8rem;
-    }
-
-    .btn{
-        width: 20%;
-    }
-}
 
 @media (max-height:736px){
     #bot{

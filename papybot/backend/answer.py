@@ -3,8 +3,8 @@ from papybot.backend.wiki_api import Wikipedia
 from papybot.backend.parser import Parser
 import papybot.backend.error_messages as err
 
-
 def answers(question):
+    """the function that launch all the backend"""
     clean_question = Parser(question).clean()
     if clean_question != "":
         gmaps = GoogleMaps().get_address(clean_question)
