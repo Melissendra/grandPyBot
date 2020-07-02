@@ -14,7 +14,7 @@ function papyDiv(sentence, url, el){
     const papy =  createElement("p", {"class": "sentence"}, newPapy);
     const papyName =  createElement("strong", {"class": ""}, papy, "Grand Py");
     const answer =  createElement("p", {"class": "sentence"}, papy, sentence);
-    const urlLink = createElement("a", {"href": url, "class": "url"}, papy, url);
+    const urlLink = createElement("a", {"href": url, "class": "url"}, answer, url);
     const arrow =  createElement("div", {"class": "arrow"}, newPapy);
     return papy;
 }

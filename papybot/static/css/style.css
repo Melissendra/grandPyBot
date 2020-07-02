@@ -1,6 +1,6 @@
 /*body design */
 body, html{
-    background: #F2D888;
+    background: #eed999;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -23,10 +23,18 @@ header{
     color: #8C7446;
 }
 
-.header{
+.header, #container, .userSentences, #grandPyBot, 
+.search, .grandPyBot, .btn, .footer, i{
     display: flex;
+}
+
+.header{
     justify-content: center;
     height: 100%;
+}
+
+h1, .grandPyIcon, #grandPyBot, .btn, i{
+    align-self: center;
 }
 
 .grandPyIcon{
@@ -34,12 +42,10 @@ header{
     width: 70px;
     justify-content: start;
     margin-right: 50px;
-    align-self: center;
 }
 
 .header h1{
     margin-left: 50px;
-    align-self: center;
     font-size: 2.2rem;
     text-align: right;
 }
@@ -50,6 +56,8 @@ p{
     color: #140b25;
     margin-top: 0;
     margin-bottom: 3px;
+    text-align: justify;
+    margin-right: 5px;
 }
 
 p:last-of-type{
@@ -60,7 +68,6 @@ p:last-of-type{
 #container{
     background: #0D0D0D;
     grid-area: main;
-    display: flex;
     flex-direction: column;
     align-content: space-between;
     border: 1px solid transparent;
@@ -109,7 +116,6 @@ p:last-of-type{
 }
 
 .userSentences{
-    display: flex;
     justify-content: flex-end;
 }
 
@@ -176,8 +182,6 @@ p:last-of-type{
 #grandPybot{
     width: 85%;
     height: 70%;
-    display: flex;
-    align-self: center;
     background-color:rgba(140, 116, 70, 0.2);
     color: #BF9D5E;
     border: 4px solid rgba(140, 116, 70, 0.2);
@@ -187,23 +191,25 @@ p:last-of-type{
 }
 
 .search{
-    display: flex;
     height: 100%;
     width: 100%;
 }
 
 .grandPyBot{
-    display: flex;
     width: 100%;
     height: 40%;
     margin: auto 30px;
 }
 
+.url{
+    color: #140b25;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
 .btn{
-    display: flex;
     justify-content: center;
     align-items: center;
-    align-self: center;
     width: 12%;
     height: 70%;
     background-color: #bf9d5e;
@@ -222,7 +228,6 @@ footer{
 }
 
 .footer{
-    display: flex;
     justify-content: center;
     align-items: flex-end;
     width: 100%;
@@ -236,15 +241,31 @@ footer{
 }
 
 i{
-    display: flex;
-    align-self: center;
     margin-right: 15px;
     color: #8c7446;
     font-size: 1.8rem;
 }
 
+@media (max-width:1400px){
+    .papySentence, #map{
+        max-width: 500px;
+    }
+
+    .footer{
+        margin-top: 0;
+    }
+}
+
+@media (max-width:1220px){
+    .papySentence, #map{
+        max-width: 400px;
+    }
+}
+
 @media(max-width:768px){
     #bot{
+        grid-template-rows: 150px 700px 60px;
+        row-gap: 30px;
         grid-template-areas: 
             "header header header header"
             "main main main main"
@@ -270,17 +291,12 @@ i{
 
     .papySentence{
         margin: 30px 50px;
-        max-width: 600px;
     }
 
     .userSentence{
         min-width: 250px;
         max-width: 400px;
         margin: 30px;
-    }
-
-    #map{
-        width: 490px;
     }
 
     #grandPyBot{
@@ -293,3 +309,264 @@ i{
     }
 }
 
+@media(max-width: 375px){
+    #bot{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 80px 600px 30px;
+        row-gap: 15px;
+        grid-template-areas: 
+            "header header"
+            "main main"
+            "footer footer";
+    }
+
+    .grandPyIcon{
+        height: 60px;
+        width: 40px;
+        margin-right: 0;
+        margin-left: 15px;
+    }
+
+    #container{
+        margin: 0 20px;
+    }
+
+    .header h1{
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 15px;
+    }
+
+    .papySentences{
+        width: 300px;
+    }
+
+    p:last-of-type{
+        margin-bottom: 1px;
+        margin-left: px;
+    }
+
+    .papySentence{
+        margin: 30px;
+        max-width: 300px;
+        line-height: 1.2;
+    }
+
+    .userSentence{
+        min-width: 150px;
+        max-width: 300px;
+        line-height: 1.2;
+    }
+
+    .url{
+        font-size: 0.5rem;
+    }
+
+    #map{
+        height: 300px;
+        width: 230px;
+    }
+
+    #grandPyBot{
+        margin-right: 20px;
+    }
+
+    .btn{
+        width: 25%;
+    }
+
+    .footer{
+        margin-top: 10px; 
+    }
+
+    .name{
+        font-size: 0.9rem;
+    }
+
+    i{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-height: 667px) and (max-width:375px){ 
+    #bot{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 80px 500px 30px;
+    row-gap: 15px;
+    grid-template-areas: 
+        "header header"
+        "main main"
+        "footer footer";
+    }
+
+    .grandPyIcon{
+        height: 60px;
+        width: 40px;
+        margin-right: 0;
+        margin-left: 15px;
+    }
+
+    #container{
+        margin: 0 20px;
+    }
+
+    .header h1{
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 15px;
+    }
+
+    .papySentences{
+        width: 300px;
+    }
+
+    .papySentence{
+        margin: 30px;
+        max-width: 300px;
+        padding: 5px;
+        font-size: 1.15rem;
+    }
+
+    .userSentence{
+        min-width: 150px;
+        max-width: 300px;
+        line-height: 1.2;
+    }
+
+    .url{
+        font-size: 0.5rem;
+    }
+
+    #map{
+        height: 300px;
+        width: 230px;
+    }
+
+    #grandPyBot{
+        margin-right: 20px;
+    }
+
+    .btn{
+        width: 25%;
+    }
+
+    .footer{
+        margin-top: 10px; 
+    }
+
+    .name{
+        font-size: 0.9rem;
+    }
+
+    i{
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width:1015px){
+    #bot{
+        row-gap: 40px;
+    }
+
+    .papySentence, #map{
+        max-width: 450px;
+    }
+
+    .url{
+        font-size: 0.8rem;
+    }
+
+    .btn{
+        width: 20%;
+    }
+}
+
+@media (max-height:736px){
+    #bot{
+        grid-template-rows: 80px 550px 30px;
+        row-gap: 30px;
+    }
+    .header h1{
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0 25px;
+    }
+
+    .grandPyIcon{
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+    #container{
+        margin: 0 25px;
+    }
+
+    .papySentences{
+        width: 300px;
+    }
+
+    .papySentence{
+        font-size: 1.1rem;
+        line-height: 1.2;
+        padding: 5px;
+        margin: 30px;
+        max-width: 300px;
+    }
+
+    .userSentence{
+        min-width: 150px;
+        max-width: 300px;
+        line-height: 1.2;
+    }
+
+    .url{
+        font-size: 0.65rem;
+    }
+    
+    #map{
+        width: 270px;
+    }
+
+    .btn{
+        width: 25%;
+    }
+
+    .footer{
+        margin-top: 0;
+    }
+
+    i{
+        font-size: 1.4rem;
+    }
+    
+}
+
+@media (max-height: 667px) and (max-width: 375px){
+    #bot{
+        grid-template-rows: 80px 480px 30px;
+    }
+
+    #map, .papySentence{
+        max-width: 240px;
+    }
+}
+
+@media (max-height: 640px) and (max-width: 360px){
+    #bot{
+        grid-template-rows: 80px 450px 30px;
+    }
+
+    p:last-child{
+        margin-left: 5px;
+    }
+
+    .papySentences{
+        width: 280px;
+    }
+
+    #map, .papySentence{
+        max-width: 220px;
+    }
+}
