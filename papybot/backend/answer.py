@@ -35,6 +35,6 @@ def answers(question):
         }
 
 if __name__ == "__main__":
-    answer = answers("")
+    answer = answers("grandpapy")
     print(answer)
     

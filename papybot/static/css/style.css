@@ -70,10 +70,26 @@ p:last-of-type{
 }
 
 .sentences{
+    border-radius: 20px;
     width: 100%;
     height: 80%;
+    margin: 0 -10px;
     overflow: auto;
+    scroll-behavior: smooth;
 }
+
+.sentences::-webkit-scrollbar{
+    width: 10px;
+    background-color: #0D0D0D;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+
+.sentences::-webkit-scrollbar-thumb{
+    background-color: #8c7446;
+    border-radius: 20px;
+}
+
 
 .papySentences{
     width: 400px;
@@ -105,6 +121,7 @@ p:last-of-type{
     font-size: 1.2rem;
     line-height: 1.3;
     margin: 30px 40px;
+    min-width: 400px;
     max-width: 600px;
     padding: 15px;
     position: relative;
@@ -147,10 +164,6 @@ p:last-of-type{
     content: "";
     position: absolute;
     left: 5px;
-}
-
-.map{
-    height: 100%;
 }
 
 .botQuestion{
@@ -199,6 +212,10 @@ p:last-of-type{
     box-shadow: 4px 4px 0 rgba(122, 102, 65, 0.2) ;
 }
 
+.btn:hover{
+    background-color: #947a49;
+}
+
 /* footer design */
 footer{
     grid-area: footer;
@@ -226,4 +243,53 @@ i{
     font-size: 1.8rem;
 }
 
+@media(max-width:768px){
+    #bot{
+        grid-template-areas: 
+            "header header header header"
+            "main main main main"
+            "footer footer footer footer";
+    }
+    .sentences{
+        height: 90%;
+    }
+
+    .grandPyIcon{
+        height: 80px;
+        width: 50px;
+        margin-right: 10px;
+    }
+    
+    .header h1{
+        font-size: 1.8rem;
+    }
+
+    #container{
+        margin: 0 65px;
+    }
+
+    .papySentence{
+        margin: 30px 50px;
+        max-width: 600px;
+    }
+
+    .userSentence{
+        min-width: 250px;
+        max-width: 400px;
+        margin: 30px;
+    }
+
+    #map{
+        width: 490px;
+    }
+
+    #grandPyBot{
+        margin-right: 20px;
+        width: 80%;
+    }
+
+    .btn{
+        width: 15%
+    }
+}
 
