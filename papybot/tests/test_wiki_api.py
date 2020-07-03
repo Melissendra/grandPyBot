@@ -32,6 +32,7 @@ class TestWikipedia:
         assert page_id == page_id_result
 
     def test_get_info_by_id(self, monkeypatch):
+        """Method to test the method to get the wiki information by id"""
         response = {
             'query': {
                 'pages': {

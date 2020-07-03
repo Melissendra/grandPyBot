@@ -1,16 +1,18 @@
 import requests
 import papybot.backend.constants as c
 
-"""Here we'll use Mediawiki to get informations about the address's results"""
+# Here we'll use Mediawiki to get informations about the address's results
 
 
 class Wikipedia:
     def __init__(self, latitude, longitude):
+        """Initialization of the class"""
         self.latitude = latitude
         self.longitude = longitude
         self.url = c.URL_WIKI
 
     def get_info_by_gps_coordinates(self):
+        """method to get the information with the gps coordinates of the address"""
         parameters = {
             "format": "json",  # answer format
             "action": "query",  # what action we ask
@@ -24,7 +26,6 @@ class Wikipedia:
             data = results.json()["query"]["geosearch"][0]["pageid"]
             return data
 
-
         else:
             data = {
                 'query': {
@@ -34,6 +35,7 @@ class Wikipedia:
             return 0
 
     def get_info_by_id(self):
+        """Method to get more information thanks to the previous method: self.get_info_by_gps_coordinates() """
         page_id = self.get_info_by_gps_coordinates()
         parameters = {
             "format": "json",
@@ -52,15 +54,5 @@ class Wikipedia:
             title_page = data["title"]
             extract_page = data["extract"]
             return title_page, extract_page, url_page
-            
-
-
-if __name__ == '__main__':
-    wiki = Wikipedia(45.6460494, -0.7911047999999999)
-    results_info = wiki.get_info_by_gps_coordinates()
-    page_info = wiki.get_info_by_id()
-
-    print(results_info)
-    print(page_info)
 
 

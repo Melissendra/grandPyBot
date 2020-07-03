@@ -21,12 +21,6 @@ FAILED_MSG = [
     "Répètes, stp!! je n'ai pas tout saisi..."
 ]
 
-NO_HISTORY_MSG = [
-    "Désolé, ma mémoire n'est plus ce qu'elle était!! Je ne connais pas cet endroit",
-    "Donnes moi une autre addresse, stp, celle-ci je ne connais pas!",
-    "Oups! tu disais?"
-]
-
 KEYWORDS = [
     "trouve", "situe", "puis", "trouver", "trouve", 
     "adresse", "emplacement", "localite", "lieu", 

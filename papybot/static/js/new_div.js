@@ -9,6 +9,7 @@ function userDiv(sentence, el){
     return newUser;
 }
 
+// function to create the bot's answers
 function papyDiv(sentence, url, el){
     const newPapy = createElement("div", {"class": "papySentence"}, el);
     const papy =  createElement("p", {"class": "sentence"}, newPapy);
@@ -19,6 +20,7 @@ function papyDiv(sentence, url, el){
     return papy;
 }
 
+// function that creates the div which will be containing the map
 function mapDiv(el){
     const newPapy = createElement("div", {"class": "papySentence"}, el);
     const map = createElement("div", {"id": "map"}, newPapy);

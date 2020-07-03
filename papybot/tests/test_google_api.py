@@ -1,11 +1,12 @@
 from papybot.backend.google_api import GoogleMaps
 
-"""Here we test the response we get from Google Maps api"""
+# Here we test the response we get from Google Maps api
 
 
 class TestGoogleMaps:
 
     def test_get_address(self, monkeypatch):
+        """method to test the method in the google_api's class"""
         response = {
             'results': [{
                 'formatted_address': 'Meursac, France',
@@ -19,6 +20,7 @@ class TestGoogleMaps:
         }
         """mock of the requests.get method"""
         class MockGetResponse:
+            """class to mock the requests module"""
             def __init__(self, url, params=None):
                 self.status_code = 200
 

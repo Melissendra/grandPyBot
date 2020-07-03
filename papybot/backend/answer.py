@@ -3,8 +3,9 @@ from papybot.backend.wiki_api import Wikipedia
 from papybot.backend.parser import Parser
 import papybot.backend.error_messages as err
 
+
 def answers(question):
-    """the function that launch all the backend"""
+    """ The function that launch all the backend. It gather all the backend class """
     clean_question = Parser(question).clean()
     if clean_question != "":
         gmaps = GoogleMaps().get_address(clean_question)
@@ -34,7 +35,3 @@ def answers(question):
             "empty_message": empty_message
         }
 
-if __name__ == "__main__":
-    answer = answers("grandpapy")
-    print(answer)
-    

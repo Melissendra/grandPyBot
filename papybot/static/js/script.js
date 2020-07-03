@@ -1,7 +1,7 @@
 const form = document.querySelector(".search");
 const input = document.querySelector("#grandPybot");
 
-
+//function to get the ajax information
 function getFormData(url, data, headers){
     return fetch(url, {
         method : 'POST',
@@ -16,6 +16,7 @@ function getFormData(url, data, headers){
     );
 }
 
+//function that'll be showing the user question on the interface
 function newQuestion(){
     const el = document.querySelector(".sentences");
     let inputVal = input.value;
@@ -24,6 +25,7 @@ function newQuestion(){
     return question
 }
 
+// function that'll be showing the bot's answers
 function papyAnswer(data, url){
     const el = document.querySelector(".sentences");
     const papyAnswer = papyDiv(data, url, el);
@@ -31,6 +33,7 @@ function papyAnswer(data, url){
     return papyAnswer;
 }
 
+// function to get the map from google maps api
 function mapGet(lng, lat, title){
     const el = document.querySelector(".sentences");
     const newMapDiv = mapDiv(el);
@@ -52,14 +55,15 @@ function mapGet(lng, lat, title){
     newMapDiv.scrollIntoView({behavior:"smooth"});
 }
 
+// function that gathers all the previous function in the ajax promises.
 function showMessages(){
     let inputVal = input.value;
     getFormData("/ajax", inputVal, {
         "Content-Type": "plain/text"
     })
     .then(response =>{
-        if(inputVal != ""){
-            if (response.latitude != undefined){
+        if(inputVal !== ""){
+            if (response.latitude !== undefined){
                 newQuestion();
                 console.log(response.latitude);
                 papyAnswer(response.wiki_article, response.url);
@@ -77,6 +81,7 @@ function showMessages(){
     });
 }
 
+//we create an event listener for the button or the enter key to launch the user's questions
 form.addEventListener("submit", function(event){
     event.preventDefault();
     showMessages();
