@@ -12,7 +12,9 @@ class Wikipedia:
         self.url = c.URL_WIKI
 
     def get_info_by_gps_coordinates(self):
-        """method to get the information with the gps coordinates of the address"""
+        """ method to get the information
+            with the gps coordinates of the address
+        """
         parameters = {
             "format": "json",  # answer format
             "action": "query",  # what action we ask
@@ -35,7 +37,9 @@ class Wikipedia:
             return 0
 
     def get_info_by_id(self):
-        """Method to get more information thanks to the previous method: self.get_info_by_gps_coordinates() """
+        """ Method to get more information thanks to the
+            previous method: self.get_info_by_gps_coordinates()
+        """
         page_id = self.get_info_by_gps_coordinates()
         parameters = {
             "format": "json",
@@ -54,5 +58,3 @@ class Wikipedia:
             title_page = data["title"]
             extract_page = data["extract"]
             return title_page, extract_page, url_page
-
-

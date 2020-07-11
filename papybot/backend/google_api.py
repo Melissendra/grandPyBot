@@ -28,4 +28,3 @@ class GoogleMaps:
 
         except IndexError:
             return "no result"
-

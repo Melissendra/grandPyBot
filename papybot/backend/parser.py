@@ -20,15 +20,19 @@ class Parser:
 
     def _strip_accents(self):
         """method to strip all the sentence of its accents"""
-        new_sentence = ''.join(c for c in unicodedata.normalize('NFD', self.sentence)
+        new_sentence = ''.join(c for c in unicodedata
+                               .normalize('NFD', self.sentence)
                                if unicodedata.category(c) != 'Mn')
         return new_sentence
 
     def _strip_punctuation_stop_words_keywords(self):
-        """method to delete all the sentence's words that are in the stop words list or the key word list """
+        """ method to delete all the sentence's words that are
+            in the stop words list or the key word list
+        """
         stop_words = csw.clean_stop_words()
         self.sentence = re.sub(r"[\W]", " ", self.sentence).split()
-        self.sentence = [n for n in self.sentence if n not in stop_words and n not in c.KEYWORDS]
+        self.sentence = [n for n in self.sentence
+                         if n not in stop_words and n not in c.KEYWORDS]
         self.sentence = ' '.join(self.sentence)
         return self.sentence
 
@@ -38,4 +42,3 @@ class Parser:
         self.sentence = self._strip_accents()
         self.sentence = self._strip_punctuation_stop_words_keywords()
         return self.sentence
-

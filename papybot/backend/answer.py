@@ -5,7 +5,9 @@ import papybot.backend.error_messages as err
 
 
 def answers(question):
-    """ The function that launch all the backend. It gather all the backend class """
+    """ The function that launch all the backend.
+        It gather all the backend class
+    """
     clean_question = Parser(question).clean()
     if clean_question != "":
         gmaps = GoogleMaps().get_address(clean_question)
@@ -34,4 +36,3 @@ def answers(question):
         return {
             "empty_message": empty_message
         }
-
