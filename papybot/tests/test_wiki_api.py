@@ -20,7 +20,7 @@ class TestWikipedia:
         class MockGetResponse:
             def __init__(self, url, params=None):
                 self.status_code = 200
-            
+
             @staticmethod
             def json():
                 return response
@@ -57,14 +57,16 @@ class TestWikipedia:
             return 348682
 
         monkeypatch.setattr('requests.get', MockGetResponse)
-        monkeypatch.setattr('papybot.backend.wiki_api.Wikipedia.get_info_by_gps_coordinates', mock_get_info_by_coordinates)
+        monkeypatch.setattr(
+            'papybot.backend.wiki_api.Wikipedia.get_info_by_gps_coordinates',
+            mock_get_info_by_coordinates)
         wiki_test = Wikipedia(45.6460494, -0.7911047999999999)
         title_result, extract_result, url_result = wiki_test.get_info_by_id()
         result = response["query"]["pages"]['348682']
         title = result["title"]
         url = result["fullurl"]
         extract = result["extract"]
-        
+
         assert title_result == title
         assert url_result == url
         assert extract_result == extract

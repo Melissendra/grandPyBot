@@ -7,7 +7,9 @@ from papybot.backend.answer import answers
 @app.route('/')
 def index():
     """Flask function for showing the index.html in the browser"""
-    return render_template('index.html', title='Grandpy bot', google_key=os.getenv("GOOGLE_API_FRONT"))
+    return render_template(
+        'index.html', title='Grandpy bot',
+        google_key=os.getenv("GOOGLE_API_FRONT"))
 
 
 @app.route("/ajax", methods=["POST"])

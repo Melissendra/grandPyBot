@@ -38,11 +38,3 @@ class TestGoogleMaps:
         assert api_address == address
         assert lat == latitude
         assert long == longitude
-
-
-            
-
-
-
-
-
